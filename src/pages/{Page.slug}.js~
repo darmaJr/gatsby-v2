@@ -13,7 +13,7 @@ export default function Page(props) {
           <Heading as="h1">{page.title}</Heading>
           <div
             dangerouslySetInnerHTML={{
-              __html: page.html,
+              __html: page.content,
             }}
           />
         </Container>
@@ -23,17 +23,12 @@ export default function Page(props) {
 }
 
 export const query = graphql`
-  query PageContent($id: String!) {
-    page(id: { eq: $id }) {
+  query PageContent($id: Int!) {
+    wpPage(databaseId: { eq: $id }) {
       id
       title
       slug
-      description
-      image {
-        id
-        url
-      }
-      html
+      content
     }
   }
 `

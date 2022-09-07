@@ -129,7 +129,7 @@ const Homepage = ({data}) => {
 	<Layout>
 	<div className="container_section">
 	
-	<div dangerouslySetInnerHTML={{ __html: data.wpPage.content }} />
+	<div dangerouslySetInnerHTML={{ __html: data.WpPage.content }} />
     </div>
 	</Layout>
 ) 
@@ -138,7 +138,7 @@ const Homepage = ({data}) => {
 
 export const query = graphql`
 query MyQuery {
-  wpPage(databaseId: {eq: 184}) {
+  WpPage(databaseId: {eq: 184}) {
     title
     content
   }

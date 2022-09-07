@@ -43,6 +43,6 @@ export default function GatsbyWordpressLogo() {
         fill="currentColor"
       />
     </svg>**/
-    <img width="150" src={LogoImage} alt="Logo Imani Prima" />
+    <img width="100" src={LogoImage} alt="Logo Imani Prima" />
   )
 }

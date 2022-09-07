@@ -10,7 +10,7 @@ const { createFilePath } = require("gatsby-source-filesystem");
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   const BlogPostTemplate = path.resolve('./src/templates/BlogPostTemplate.js');
-  const PageTemplate = path.resolve('./src/templates/page.js');
+  const PageTemplate = path.resolve('./src/templates/Page.js');
   const result = await graphql(`
     {
       allWpPost {
@@ -57,17 +57,3 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
   });
 };
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === "build-html" || stage === "develop-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /bad-module/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    })
-  }
-}

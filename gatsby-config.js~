@@ -5,9 +5,6 @@ require("dotenv").config({
 })
 
 module.exports = {
-  flags:{
-    DEV_SSR: true
-  },
   siteMetadata: {
     siteUrl: "https://gatsbywordpresshomepage.gatsbyjs.io/",
     title: "Gatsby WordPress Homepage Starter",
@@ -18,8 +15,7 @@ module.exports = {
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        //url: process.env.WPGRAPHQL_URL || `http://localhost/ip/graphql` ,
-        url: process.env.WPGRAPHQL_URL || `https://imaniprima.co.id/graphql` ,
+        url: process.env.WPGRAPHQL_URL || `http://localhost/ip/graphql` ,
       },
     },
      {
